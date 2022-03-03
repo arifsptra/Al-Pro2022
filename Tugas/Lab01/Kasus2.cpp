@@ -1,4 +1,4 @@
-// Program Tebak Output
+// Tebak Output
 
 #include <iostream>
 
