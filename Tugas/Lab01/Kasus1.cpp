@@ -14,11 +14,11 @@ int main(){
 
     // Konversi Detik ke Jam
     jam = detik/3600;
-    sisadetik = detik - (jam*3600);
+    sisadetik = detik % 3600;
 
     // Konversi Detik ke Menit
     menit = sisadetik/60;
-    sisadetik = sisadetik - (menit*60);
+    sisadetik = sisadetik % 60;
 
     cout << jam << "Jam " << menit << "Menit " << sisadetik << "Detik";
 
