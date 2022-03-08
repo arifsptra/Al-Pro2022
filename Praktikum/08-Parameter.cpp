@@ -1,17 +1,22 @@
 // Kinds of parameters
 // Formal Parameters are variables that are in the parameter list in the function definition
-/*int example(int a, int b){ // => Formal parameters
+/*
+int example(int a, int b){ // => Formal parameters
     return (a+b);
-}*/
+}
+*/
 
 // Actual parameters are variables (parameters) used in function calls
-/*int example(){
+/*
+int example(){
     a = example(b, c); // => Actual parameters
-}*/
+}
+*/
 
 // Default Perameter
 #include <cstdio>
 
+// when a parameter is set to the value default, then the next parameter MUST is set to the default value as well.
 void foo(int a, int b=1, int c=2);
 
 void foo(int a, int b, int c){
