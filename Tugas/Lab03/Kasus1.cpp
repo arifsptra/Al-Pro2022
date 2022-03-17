@@ -4,53 +4,46 @@
 
 using namespace std;
 
-int functionKe1(int *x, int *y, char *opr){
-    int hasil;
-
-    if(*opr == '+'){
-        hasil = *x + *y;
-    }else if(*opr == '-'){
-        hasil = *x - *y;
-    }else if(*opr == '*'){
-        hasil = *x * *y;
-    }else if(*opr == '%'){
-        hasil = *x % *y;
+void function1(int nilai1, int nilai2, char opr, int *hasil){
+    if(opr == '+'){
+        *hasil = nilai1 + nilai2;
+    }else if(opr == '-'){
+        *hasil = nilai1 - nilai2;
+    }else if(opr == '*'){
+        *hasil = nilai1 * nilai2;
+    }else if(opr == '%'){
+        *hasil = nilai1 % nilai2;
     }
-    return hasil;
 }
 
-float functionKe2(float *p, float *q, char *opr){
-    return (*p / *q);
+void function2(float nilai1, float nilai2, char opr, float *hasil){
+    *hasil = nilai1 / nilai2;
 }
 
 int main(){
-    int x, y;
-    float p, q;
     char opr;
 
     cout << "Masukkan Operator: ";
     cin >> opr;
-    
-    if(opr == '/'){
-        float hasil;
 
+    if((opr=='+') || (opr=='-') || (opr=='*') || (opr=='%')){
+        int nilai1, nilai2, hasil;
         cout << "Masukkan Nilai 1: ";
-        cin >> p;
+        cin >> nilai1;
         cout << "Masukkan Nilai 2: ";
-        cin >> q;
-
-        hasil = functionKe2(&p, &q, &opr);
-        cout << "Hasil: " << hasil << endl;
+        cin >> nilai2;
+        function1(nilai1, nilai2, opr, &hasil);
+        cout << "Hasil: " << hasil;
+    }else if(opr == '/'){
+        float nilai1, nilai2, hasil;
+        cout << "Masukkan Nilai 1: ";
+        cin >> nilai1;
+        cout << "Masukkan Nilai 2: ";
+        cin >> nilai2;
+        function2(nilai1, nilai2, opr, &hasil);
+        cout << "Hasil: " << hasil;
     }else {
-        int hasil;
-
-        cout << "Masukkan Nilai 1: ";
-        cin >> x;
-        cout << "Masukkan Nilai 2: ";
-        cin >> y;
-
-        hasil = functionKe1(&x, &y, &opr);
-        cout << "Hasil: " << hasil << endl;
+        cout << "Maaf Operator yang anda Masukkan Salah";
     }
 
     return 0;
