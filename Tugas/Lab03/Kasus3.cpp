@@ -1,31 +1,26 @@
-// Kasus 3 - Program Konversi Desimal ke Biner dengan prosedur
+// Kasus 3 - Program Konversi Biner ke Desimal dengan prosedur
 
 #include <iostream>
 
 using namespace std;
 
-void dtb(int bilangan, int *sisa){
-    int hasilBagi, sisaBagi;
+void btd(int nilaiBiner, int *nilaiDesimal){
+    int i=1, sisa;
 
-    if(bilangan <= 1){
-        cout << bilangan;
-        return;
+    while(nilaiBiner != 0){
+        sisa = nilaiBiner % 10;
+        (*nilaiDesimal) = (*nilaiDesimal) + (sisa*i);
+        i = i*2;
+        nilaiBiner = nilaiBiner/10;
     }
-
-    sisaBagi = bilangan % 2;
-    hasilBagi = bilangan / 2;
-
-    dtb(hasilBagi, &sisaBagi);
-    // cout << sisaBagi;
 }
 
 int main(){
-    int x, hasil;
+    int nilaiDesimal, nilaiBiner;
 
-    cout << "Masukkan Bilangan Desimal: ";
-    cin >> x;
-
-    cout << "Hasil: ";
-    dtb(x, &hasil);
-    cout << hasil;
+    nilaiDesimal = 0;
+    cout << "Masukkan angka biner: ";
+    cin >> nilaiBiner;
+    btd(nilaiBiner, &nilaiDesimal);
+    cout << "Hasil dari biner ke desimal: " << nilaiDesimal;
 }
