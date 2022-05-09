@@ -1,0 +1,4 @@
+- Membuat program pencarian dengan binary search pada sebuah array
+- Melakukan pengurutan pada array, jika array tidak urut
+- Tidak melakukan pengurutan pada array, jika array sudah urut
+- Jangan menggunakan fungsi bawaan c++
