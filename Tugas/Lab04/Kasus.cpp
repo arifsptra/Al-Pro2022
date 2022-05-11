@@ -45,18 +45,22 @@ int binarySearch(int arr[], int size, int searchKey){
 }
 
 int main(){
-    int arr[10] = {11, 21, 2, 4, 8, 30, 7, 9, 6, 10};
+    int arr[10] = {11, 21, 2, 4, 8, 30, 7, 8, 6, 10};
     int n = sizeof(arr)/sizeof(arr[0]); 
 
     printf("Data sebelum diurutkan: \n");
     printArray(arr, n); 
 
     bubbleShort(arr, n);
+    
+    int k;
+    printf("Angka yang dicari: ");
+    scanf("%d", &k);
 
-    int hasil = binarySearch(arr, n, 11);
+    int hasil = binarySearch(arr, n, k);
 
     if(hasil>=0){
-        printf("Data ditemukan di index ke %d", hasil);
+        printf("\nData ditemukan di index ke %d", hasil);
     }else {
         printf("Data tidak Ditemukan");
     }
