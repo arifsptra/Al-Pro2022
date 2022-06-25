@@ -22,19 +22,19 @@ class Balok {
         }
     }
 
-    int getVolume(Balok b){
-        int vol = b.panjang * b.lebar * b.tinggi;
+    int getVolume(){
+        int vol = panjang * lebar * tinggi;
         return vol;
     }
 
-    void cetak(Balok b){
-        cout << "Balok dengan panjang " << b.panjang << ", lebar " << b.lebar << ", dan tingginya " << b.tinggi << ", volumenya " << b.getVolume(b);
+    void cetak(){
+        cout << "Balok dengan panjang " << panjang << ", lebar " << lebar << ", dan tingginya " << tinggi << ", volumenya " << getVolume();
     }
 };
 
 int main(){
     Balok b(10, 10, 10);
-    b.cetak(b);
+    b.cetak();
 
     return 0;
 }
